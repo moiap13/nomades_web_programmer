@@ -1,0 +1,16 @@
+# course keynotes
+*.key
+
+# course slides
+arrayFunctions.pdf
+
+# exercises
+student_exercises/corrections/
+student_exercises/corrections/basics/
+student_exercises/corrections/advanced/
+student_exercises/corrections/DOM/
+student_exercises/implementations/advanced/
+student_exercises/implementations/DOM/
+
+# OSX file
+.DS_Store
