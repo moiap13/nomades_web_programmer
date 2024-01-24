@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    arr = ["Pomme", "Banane", "Melon", "Pasteque"]
+    
+    for(let i=0; i < arr.length; i++){
+      fruit = arr[i]
+      console.log(fruit)
+    }
+
+    for(fruit of arr){
+      console.log(fruit)
+    }
+
+    function printFruit(fruit) {
+      console.log(fruit)
+    }
+    arr.forEach(function (fruit) {
+      console.log(fruit)
+    })
+  </script>
+</body>
+</html>
