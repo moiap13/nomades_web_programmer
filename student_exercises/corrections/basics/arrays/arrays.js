@@ -37,8 +37,21 @@ function triDecroissant(tab) {
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/for
  */
 function somme(tableau) {
-  // Ton implementation
-	return null;
+  let total = 0
+  // for(let i=1; i<=tableau.length-1; i++){
+  //   total += tableau[i] // total += tableau[i] <==> total = total + tableau[i] 
+  // }
+
+  // for(curr_elem of tableau){
+  //   total += curr_elem 
+  // }
+
+  // tableau.forEach(curr_elem => {
+  //   total += curr_elem 
+  // })
+  // return total
+
+  return tableau.reduce((pv, cv) => pv+cv)
 }
 
 /**
@@ -53,7 +66,14 @@ function somme(tableau) {
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/parseFloat
  */
 function moyenne(tableau) {
-  return null
+  // return somme(tableau)/tableau.length
+
+  let total = 0
+  for(let i=0; i<=tableau.length-1; i++){
+    total += tableau[i] // total += tableau[i] <==> total = total + tableau[i] 
+  }
+
+  return total / tableau.length
 }
 
 /**
@@ -181,8 +201,22 @@ function ecartType(tableau) {
  * existe([1, 2, 3], 4) // false
  */
 function existe(tableau, valeur) {
-  // Ton implementation
-	return null;
+  for(curr_elem of tableau){
+    if(curr_elem === valeur){
+      return true
+    } 
+  }
+      
+  return false
+
+  // let exist = false
+  // for(curr_elem of tableau){
+  //   if(curr_elem === valeur){
+  //     exist = true
+  //   }
+  // }
+
+  // return exist
 }
 
 
@@ -198,8 +232,19 @@ function existe(tableau, valeur) {
  * position([1, 2, 3], 4) // -1
  */
 function position(tableau, valeur) {
-  // Ton implementation
-	return null;
+  // if (!existe(tableau, valeur))
+  // if (existe(tableau, valeur) == false){
+  //   return -1
+  // }
+
+  for(let i=0; i<tableau.length; i++){
+    const curr_elem = tableau[i]
+    if(curr_elem === valeur){
+      return i
+    }
+  }
+
+  return -1
 }
 
 /**
