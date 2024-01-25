@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1 id="autre">Hello world 2</h1>
+  <h1 id="title">Hello World</h1>
+  <script>
+    i = 0;
+    while(i < 10**8) i++
+    const title = document.querySelector("#title")
+    title.textContent = "Bonjour Nomades"
+    console.log(typeof title.textContent)
+
+    function showAlert(e){
+      console.log(e)
+      alert(e.target.textContent)
+    }
+    title.addEventListener('click', e => {
+      alert(e.target.textContent) 
+    })
+    document.querySelector("#autre").addEventListener('click', abc => {
+      alert(abc.target.textContent) 
+    })
+  </script>
+</body>
+</html>

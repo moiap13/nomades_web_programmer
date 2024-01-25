@@ -8,9 +8,33 @@
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/for
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/if...else
  */
-function triCroissant(tab) {
-  // Ton implementation
-	return null;
+function triCroissant(tab) { // O(n^2) -> O(nlog(n))
+  // for(let i=0; i<tab.length;i++){
+  //   let min_i = tab[i]
+
+  //   for(let j=i+1;j<tab.length;j++){
+  //     let curr_elem = tab[j]
+
+  //     if(curr_elem < min_i){
+  //       tab[i] = curr_elem
+  //       tab[j] = min_i
+  //       min_i = curr_elem
+  //     }
+  //   }
+  // }
+
+  for(let i=0; i<tab.length;i++){ 
+    for(let j=i+1;j<tab.length;j++){
+      if(tab[j] < tab[i]){          
+        // swap values      
+        const tmp = tab[i]          
+        tab[i] = tab[j]             
+        tab[j] = tmp                  
+      }
+    }
+  }
+
+  return tab
 }
 
 /**
@@ -25,7 +49,18 @@ function triCroissant(tab) {
  */
 function triDecroissant(tab) {
 	 // Ton implementation
-	return null;
+   for(let i=0; i<tab.length;i++){ 
+    for(let j=i+1;j<tab.length;j++){
+      if(tab[j] > tab[i]){          
+        // swap values      
+        const tmp = tab[i]          
+        tab[i] = tab[j]             
+        tab[j] = tmp                  
+      }
+    }
+  }
+
+  return tab
 }
 
 /**
@@ -65,7 +100,7 @@ function somme(tableau) {
  * moyenne([1, 1, 1, 10, 10]) // 4.6
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/parseFloat
  */
-function moyenne(tableau) {
+function moyenne(tableau) { // O(n)
   // return somme(tableau)/tableau.length
 
   let total = 0
@@ -122,8 +157,11 @@ function min(tableau) {
  * max([10, 3, 2, 5, 4]) // 10
  */
 function max(tableau) {
-  // Ton implementation
-	return null;
+  for(curr_elem of tableau)
+    if(curr_elem > curr_min)
+      curr_min = curr_elem
+  
+  return curr_min
 }
 
 /**
@@ -134,7 +172,7 @@ function max(tableau) {
  * minMax([1, 2, 3, 4, 5]) // [1, 5]
  */
 function minMax(tableau) {
-  return null
+  return [min(tableau), max(tableau)]
 }
 
 /**
@@ -153,8 +191,44 @@ function minMax(tableau) {
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/floor
  */
 function mediane(tableau) {
-  // Ton implementation
-	return null;
+  const sorted_array = triCroissant(tableau)
+
+  let res
+  let index
+
+  if(sorted_array.length % 2 != 0){
+    index = Math.floor(tableau.length/2)
+    res = tableau[index]
+    return res
+  } else {
+    index = tableau.length/2
+    res = (tableau[index] + tableau[index-1])/2
+    return res
+  } 
+ 
+  // let index = sorted_array.length/2
+  // let res = (sorted_array[index] + sorted_array[index-1])/2
+
+  // if(sorted_array.length % 2 != 0){
+  //   index = Math.floor(sorted_array.length/2)
+  //   res = sorted_array[index]
+  // }
+  
+  // return res
+
+  // const sorted_array = triCroissant(tableau)
+
+  // let index = (
+  //   sorted_array.length % 2 != 0 
+  //   ? Math.floor(sorted_array.length/2) 
+  //   : sorted_array.length/2
+  // )
+  
+  // return (
+  //   sorted_array.length % 2 != 0 
+  //   ? tableau[index]
+  //   : (tableau[index] + tableau[index-1])/2
+  // )
 }
 
 /**
@@ -187,8 +261,12 @@ function mode(tableau) {
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sqrt
  */
 function ecartType(tableau) {
-  // Ton implementation
-	return null;
+  const mean = moyenne(tableau)
+  let total = 0
+  for(const curr_elem of tableau){
+    total += ((curr_elem-mean)**2)
+  }
+  return Math.sqrt(total / tableau.length)
 }
 
 /**
@@ -258,8 +336,27 @@ function position(tableau, valeur) {
  * similaires([1, 2, 3], [1, 2]) // false
  */
 function similaires(arr1, arr2) {
-  // Ton implementation
-	return null;
+  // if(arr1.length === arr2.length){
+  //   for(let i=0;i<arr1.length;i++){
+  //     if(arr1[i] !== arr2[i]){
+  //       return false
+  //     }
+  //   }
+
+  //   return true
+  // }
+
+  // return false
+
+  if(arr1.length !== arr2.length) return false
+
+  for(let i=0;i<arr1.length;i++){
+    if(arr1[i] !== arr2[i]){
+      return false
+    }
+  }
+
+  return true
 }
 
 /**
@@ -274,7 +371,8 @@ function similaires(arr1, arr2) {
  */
 function estTableau(tableau) {
   // Ton implementation
-	return null;
+	// return Array.isArray(tableau);
+	return tableau instanceof Array;
 }
 
 /**
@@ -282,15 +380,24 @@ function estTableau(tableau) {
  * @param {Array} tableau l'élément à vérifier
  * @returns {Boolean} true si le tableau est composé uniquement de nombres, false sinon
  * @example
- * estTableauDeNombres([]) // true
+ * estTableauDeNombres([]) // false
  * estTableauDeNombres([1, 2, 3]) // true
  * estTableauDeNombres([1, 2, '3']) // false
  * estTableauDeNombres(1) // false
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/typeof
  */
-function estTableauDeNombres(tableau) { 
-  // Ton implementation
-	return null;
+function estTableauDeNombres(tableau) {
+  if (!estTableau(tableau) || tableau.length == 0) 
+    return false
+
+  // Je suis sur que je suis un tableau et que j'ai au moin un element dans le tableau
+  for(const cur_elem of tableau){
+    if(typeof cur_elem != "number"){
+      return false
+    }
+  }
+
+  return true
 }
 
 module.exports = {
