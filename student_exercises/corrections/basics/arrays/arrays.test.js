@@ -98,7 +98,6 @@ describe('Array', () => {
 				expect(array.mode([4, 2, 4, 3, 2, 2])).toBe(2);
 			});
 		});
-		/*
 		describe('Ecart type', () => {
 			test('Ecart type d\'un tableau', () => {
 				expect(array.ecartType([1, 2, 3, 4, 5])).toBe(1.4142135623730951);
@@ -116,7 +115,6 @@ describe('Array', () => {
 				expect(array.ecartType([4, 2, 4, 3, 2, 2])).toBe(0.8975274678557507);
 			});
 		});
-		*/
 	});
 
 	describe('Fonctions diverses', () => {
@@ -171,7 +169,7 @@ describe('Array', () => {
 			});
 
 			test('Vérification d\'un tableau de Nombres', () => {
-				expect(array.estTableauDeNombres([])).toBe(true);
+				expect(array.estTableauDeNombres([])).toBe(false);
 			});
 
 			test('Vérification d\'un tableau de Nombres', () => {

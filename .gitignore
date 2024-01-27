@@ -7,6 +7,17 @@ arrayFunctions.pdf
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
+# Examples
+example/DOM/asychrone/
+example/DOM/asynchrone/
+example/DOM/chrono/
+example/DOM/calculatrice/
+example/DOM/juste_prix/
+example/DOM/scripts/
+example/DOM/stockage/
+example/DOM/hardware.zip
+example/DOM/index.html
+
 # exercises
 student_exercises/corrections/basics/affichageNombres/
 student_exercises/corrections/basics/divers/
@@ -17,7 +28,13 @@ student_exercises/corrections/basics/strings/
 student_exercises/corrections/advanced/
 student_exercises/corrections/DOM/
 student_exercises/implementations/advanced/
-student_exercises/implementations/DOM/
+
+student_exercises/implementations/DOM/chrono/
+student_exercises/implementations/DOM/chrono.zip
+student_exercises/implementations/DOM/snake/
+student_exercises/implementations/DOM/snakeCorrected.zip
+student_exercises/implementations/DOM/toDo_list/
+student_exercises/implementations/DOM/toDo_list.zip
 
 # OSX file
 .DS_Store

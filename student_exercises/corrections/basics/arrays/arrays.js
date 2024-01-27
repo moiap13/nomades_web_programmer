@@ -157,6 +157,8 @@ function min(tableau) {
  * max([10, 3, 2, 5, 4]) // 10
  */
 function max(tableau) {
+  let curr_min = -Infinity
+  
   for(curr_elem of tableau)
     if(curr_elem > curr_min)
       curr_min = curr_elem
