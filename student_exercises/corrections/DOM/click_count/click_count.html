@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+    <p id="count">0</p>
+    <button id="click_counter" data-firstname="pisanello" >Click</button>
+    <button id="reset">Reset</button>
+  </div>
+  <script>
+    let total = 0;
+    const RESET = document.getElementById("reset") 
+    RESET.disabled = true
+
+    function counter(){
+      total++
+      document.getElementById("count").innerHTML=total
+      document.getElementById("reset").disabled = false 
+    }
+    function reset(){
+      total = 0
+      document.getElementById("count").innerHTML=total
+      RESET.disabled = true
+    }
+
+    document.getElementById("click_counter").addEventListener("click", counter)
+    RESET.addEventListener("click", reset)
+
+  </script>
+</body>
+</html>
