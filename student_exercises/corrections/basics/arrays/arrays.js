@@ -246,8 +246,56 @@ function mediane(tableau) {
  * mode([4, 2, 4, 3, 2, 2]) // 2
  */
 function mode(tableau) {
-  // Ton implementation
-	return null;
+  // let o = {}
+  
+  // for(let i in tableau){ // for(let i=0; i<tableau; i++)
+  //   let currElem = tableau[i]
+  //   if(o[currElem] === undefined){
+  //     o[currElem] = 1
+  //   } else {
+  //     o[currElem] += 1 // "nb_" + str(currElem)
+  //   }
+  // }
+
+  // let maxCount = -1
+  // let modeValue
+
+  // for(let i in o){
+  //   if(o[i] > maxCount){
+  //     maxCount = o[i]
+  //     modeValue = i
+  //   }
+  // }
+
+  // return Number(modeValue)
+  // return parseInt(modeValue)
+  // return modeValue-0
+
+  const counter = {}
+
+  function callbackForEach(e, i, a){
+    counter[e] = counter[e] === undefined ? 0 : counter[e] 
+    counter[e] = counter[e] || 0
+    counter[e]++
+  }
+
+  tableau.forEach((e, i, a) => {
+    counter[e] = counter[e] === undefined ? 0 : counter[e] 
+    counter[e] = counter[e] || 0
+    counter[e]++
+  })
+
+  let maxFreq = 0
+  let mode = 0
+
+  for(const currElem in counter){
+    if(counter[currElem] > maxFreq){
+      maxFreq = counter[currElem]
+      mode = currElem
+    }
+  }
+
+  return mode
 }
 
 /**

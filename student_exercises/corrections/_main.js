@@ -10,3 +10,8 @@ const a = 2;
 const b = 3;
 
 console.log(`a=${a}, b=${b} : a+b=${arithmetic.add(a, b)}`);
+
+function log(f){
+  console.log(f)
+}
+

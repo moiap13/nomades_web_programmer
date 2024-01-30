@@ -8,13 +8,14 @@ arrayFunctions.pdf
 .ipynb_checkpoints/
 
 # Examples
-example/DOM/asychrone/
+example/DOM/asychrone/promises.html
 example/DOM/asynchrone/
 example/DOM/chrono/
 example/DOM/calculatrice/
 example/DOM/juste_prix/
 example/DOM/scripts/
 example/DOM/stockage/
+example/DOM/carousel/
 example/DOM/hardware.zip
 example/DOM/index.html
 
@@ -26,7 +27,6 @@ student_exercises/corrections/advanced/
 student_exercises/corrections/DOM/
 student_exercises/implementations/advanced/
 
-student_exercises/implementations/DOM/chrono/
 student_exercises/implementations/DOM/chrono.zip
 student_exercises/implementations/DOM/snake/
 student_exercises/implementations/DOM/snakeCorrected.zip

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function wait(duration) {
+      const start = Date.now();
+      while (Date.now() - start < duration) {
+        // do nothing
+      }
+    }
+
+    console.log('start');
+    wait(5000);
+    console.log('end');
+
+    // example 2
+
+    console.log('start');
+    setTimeout(() => {
+      console.log('end of timeout');
+    }, 1000);
+    console.log('end');
+    
+    // example 3
+
+    console.log('start');
+    setInterval(() => {
+      console.log('end of timeout');
+    }, 1000);
+    console.log('end');
+
+    // example 4
+
+    console.log('start');
+    const t = setTimeout(() => {
+      console.log('end of timeout');
+    }, 1000);
+    console.log('end');
+    clearTimeout(t);
+
+    // example 5
+    console.log('start');
+    const t2 = setTimeout(() => {
+      console.log('end of timeout');
+    }, 1000);
+    const p = prompt('Nom');
+
+    // example 6 -> callback hell (pyramid of doom) -> Promises
+    console.log('start');
+    const t3 = setTimeout(() => {
+      console.log('end of timeout');
+      setTimeout(() => {
+        console.log('end of timeout 2');
+        setTimeout(() => {
+          console.log('end of timeout 3');
+        }, 1000);
+      }, 1000);
+    }, 1000);
+
+    // Exercice afficher un message 5x avec 1s d'intervalle
+    console.log('start');
+    let i = 0;
+    const t4 = setInterval(() => {
+      console.log('end of timeout');
+      i++;
+      if (i === 5) {
+        clearInterval(t4);
+      }
+    }, 1000);
+
+    // exercice 2 decompte de 3 a 0
+    function decompte(n) {
+      console.log(n);
+      const t = setInterval(() => {
+        i--;
+        if (i === 0) {
+          clearInterval(t);
+        }
+      }, 1000);
+    } 
+
+    decompte(3)
+    // v1.1
+    decompte(5) // en meme temps que le premier
+
+    // exercice 2 decompte de 5 a 0 V"
+    function decompte2(n) {
+      setTimeout(() => {
+        console.log(n);
+        if (n > 0) {
+          decompte2(n - 1);
+        }
+      }, 1000);
+    } 
+
+    decompte2(3)
+  </script>
+</body>
+</html>
