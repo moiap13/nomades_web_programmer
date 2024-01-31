@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="h1_name"></h1>
+  <button id="btn_clear">Clear local storage</button>
+  <script>
+    if(localStorage.getItem("prenom")){
+      document.querySelector("#h1_name").textContent = localStorage.getItem("prenom")
+    } else {
+      const prenom = prompt("Veuillez entrez votre prenom :")
+      if(prenom != null)
+        localStorage.setItem("prenom", prenom)
+    }
+
+    document.querySelector("#btn_clear").addEventListener("click", e => {
+      localStorage.removeItem("prenom")
+      //localStorage.clear()
+    })
+  </script>
+</body>
+</html>

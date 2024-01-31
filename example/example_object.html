@@ -14,6 +14,7 @@
 </head>
 <body>
   <script>
+    /*
     const person = {
       "lastname": "Pisanello",
       "firstname": "Antonio",
@@ -44,6 +45,37 @@
       console.log(even.name)
     }
     console.log(big_obj)
+    */
+
+
+
+    p1 = {
+      nom: "Pisanello",
+      prenom: "Antonio",
+      age: 34
+    }
+
+    p2 = {
+      nom: "Gaillard",
+      prenom: "Vincent",
+      age: 24,
+    }
+
+    p3 = {
+      nom: "makeva",
+      prenom: "Katrina",
+      age: 25
+    }
+
+    persons = [p1, p2, p3]
+    const jsonString = JSON.stringify(persons)
+    const jsonObj = JSON.parse(jsonString)
+    console.log(jsonString)
+    console.log(jsonObj)
+
+    for(person of persons){
+      console.log(person.fullname())
+    }
   </script>
 </body>
 </html>
