@@ -16,6 +16,7 @@ example/DOM/juste_prix/
 example/DOM/scripts/
 example/DOM/stockage/
 example/DOM/carousel/
+example/DOM/usersList/
 example/DOM/hardware.zip
 example/DOM/index.html
 
@@ -25,7 +26,6 @@ student_exercises/corrections/basics/divers/
 
 student_exercises/corrections/advanced/
 student_exercises/corrections/DOM/snake/
-student_exercises/corrections/DOM/toDo_list/
 student_exercises/corrections/DOM/*.zip
 
 student_exercises/implementations/advanced/
