@@ -55,11 +55,22 @@
     <!-- Custom scripts -->
     <script src="./users.js"></script>
     <script src="./userlist.js"></script>
-    <!-- <script src="../userlist_example/userslist.js"></script> -->
+    <!-- <script src="./userslist.obfuscated.js"></script> -->
     <script defer>
-      // TODO: your implementation
-      const USER_ROW = document.querySelector("#row-users")
-      displayUsers(USERS, USER_ROW)
+      const ROW_USERS = document.querySelector('#row-users')
+      const USER_SEARCH = document.querySelector('#user-search')
+      const USER_SEARCH_BTN = document.querySelector('#user-search-btn')
+      
+      USER_SEARCH_BTN.addEventListener('click', e => {
+        const searchValue = USER_SEARCH.value.toLowerCase()
+        console.log(searchValue)
+        const filteredUsers = search(searchValue)
+        console.log(filteredUsers)
+        ROW_USERS.innerHTML = ''
+        displayUsers(filteredUsers)
+      })
+
+      displayUsers(USERS)
     </script>
   </body>
 </html>
