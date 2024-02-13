@@ -27,14 +27,17 @@ student_exercises/corrections/basics/divers/
 student_exercises/corrections/advanced/
 student_exercises/corrections/DOM/snake/
 student_exercises/corrections/DOM/*.zip
-student_exercises/corrections/react/
+student_exercises/corrections/react/custom_hooks/
+student_exercises/corrections/react/product_list/
+student_exercises/corrections/react/toDo_list/
+student_exercises/corrections/react/userList/
 
 student_exercises/implementations/advanced/
 student_exercises/implementations/DOM/chrono.zip
 student_exercises/implementations/DOM/snake/
 student_exercises/implementations/DOM/snakeCorrected.zip
 student_exercises/implementations/DOM/toDo_list.zip
-student_exercises/implementations/react/product_list/
+student_exercises/implementations/react/custom_hooks/
 
 # OSX file
 .DS_Store
