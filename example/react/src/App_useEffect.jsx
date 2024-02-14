@@ -3,52 +3,36 @@ import { Input } from './components/forms/Input'
 import { Checkbox } from './components/forms/Checkbox'
 
 function App() {
-  const [showTitle, setShowTitle] = useState(true)
+  const [duration, setDuration] = useState(5)
+  const [secondsLeft, setSecondsLeft] = useState(duration)
 
-  return <div className='container my-3 stack'>
-    <Checkbox
-      label='Show Title'
-      onChange={setShowTitle}
-      checked={showTitle}
-    />
-    { showTitle && <EditTitle />}
-    <div style={{height: "300vh"}}></div>
-  </div>
-}
-
-function EditTitle() {
-  const [title, setTitle] = useState('')
-  const [firstname, setFirstname] = useState('')
-  const [y, setY] = useState(0)
+  const handleChange = (v) => {
+    setDuration(v)
+    setSecondsLeft(v)
+  }
 
   useEffect(() => {
-    const scrollHandler = () => {
-      console.log('scroll')
-      setY(window.scrollY)
-    }
-    window.addEventListener('scroll', scrollHandler)
-    
+    const interval = setInterval(() => {
+      setSecondsLeft(v => {
+        if (v === 0) {
+          clearInterval(interval)
+          return 0
+        }
+        return v - 1
+      })
+    }, 1000)
     return () => {
-      window.removeEventListener('scroll', scrollHandler)
+      clearInterval(interval)
     }
   }, [])
 
-  useEffect(() => {
-    document.title = title
-  }, [title])
-
-  return <div className='vstack gap-3'>
-    <div>Y: {y}</div>
+  return <div className='vstack gap-2'>
     <Input
-      placeholder='Modify Title'
-      value={title}
-      onChange={setTitle}
+      placeholder='Duration'
+      value={duration}
+      onChange={handleChange}
     />
-    <Input
-      placeholder='Firstname'
-      value={firstname}
-      onChange={setFirstname}
-    />
+    <div>Seconds Left: {secondsLeft}</div>
   </div>
 }
 export default App

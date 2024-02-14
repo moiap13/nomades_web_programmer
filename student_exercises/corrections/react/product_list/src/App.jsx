@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { CheckboxLabel } from "./components/forms/CheckBoxLabel";
 import { InputLabel } from "./components/forms/InputLabel";
+import { ProductRow } from "./components/table/ProductRow";
+import { ProductRowCategory } from "./components/table/ProductRowCategory";
 
 const PRODUCTS = [
   { category: "fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "vegetables", price: "$4", stocked: false, name: "Eggplant" },
   { category: "fruits", price: "$1", stocked: true, name: "Banana" },
   { category: "fruits", price: "$2", stocked: false, name: "Cherry" },
   { category: "vegetables", price: "$2", stocked: true, name: "Carrot" },
-  { category: "vegetables", price: "$4", stocked: false, name: "Eggplant" },
   { category: "vegetables", price: "$1", stocked: true, name: "Zucchini" },
 ];
+
 function App() {
   const [showOnlyStock, setShowOnlyStock] = useState(true)
   const [searchText, setSearchText] = useState('')
 
-  const products = PRODUCTS.filter(p => showOnlyStock ? p.stocked : true)
-
-  const fruit = products.filter(p => p.category === "fruits")
-  const vegetables = products.filter(p => p.category === "vegetables")
+  const products = PRODUCTS
+                    .sort((a, b) => a.category > b.category)
+                    .filter(p => showOnlyStock ? p.stocked : true)
+                    .filter(p => p.name.toLowerCase().includes(searchText.toLowerCase()))
 
   console.log(searchText)
   return <div className="container">
@@ -29,7 +32,7 @@ function App() {
       searchChange={setSearchText}  
     />
 
-    <ProducTable productsFruit={fruit} productsVege={vegetables}/>
+    <ProducTable products={products}/>
   </div>
 }
 
@@ -40,20 +43,32 @@ function SearchBar({cbxChecked, cbxChange, searchValue, searchChange}) {
   </div>
 }
 
-function ProducTable({productsFruit, productsVege}) {
-  return <ul>
-    <li style={{listStyle: "none"}}>Fruits</li>
-    {
-      productsFruit.map(p => {
-        return <li key={p.name}>{p.name}</li>
-      })
+function ProducTable({products}) {
+  let curr_category = ""
+  const table_contents = []
+
+  products.forEach(product => {
+    if(product.category.toLowerCase() != curr_category){
+      table_contents.push(<ProductRowCategory category={product.category} />)
+      curr_category = product.category.toLowerCase()
     }
-    <li style={{listStyle: "none"}}>Vege</li>
-    {
-      productsVege.map(p => {
-        return <li key={p.name}>{p.name}</li>
-      })
-    }
-  </ul>
+
+    table_contents.push(<ProductRow name={product.name} price={product.price} stocked={product.stocked} />)
+  })
+
+  return <table className="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        table_contents
+      }
+    </tbody>
+  </table>
+
 }
 export default App;
