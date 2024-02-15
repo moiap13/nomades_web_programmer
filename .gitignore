@@ -19,17 +19,17 @@ example/DOM/carousel/
 example/DOM/usersList/
 example/DOM/hardware.zip
 example/DOM/index.html
+example/react_router_dom/
 
 # exercises
 student_exercises/corrections/basics/affichageNombres/
 student_exercises/corrections/basics/divers/
-
 student_exercises/corrections/advanced/
 student_exercises/corrections/DOM/snake/
 student_exercises/corrections/DOM/*.zip
 student_exercises/corrections/react/custom_hooks/
 student_exercises/corrections/react/product_list_old/
-student_exercises/corrections/react/toDo_list/
+student_exercises/corrections/react/toDo_list_old/
 student_exercises/corrections/react/userList/
 
 student_exercises/implementations/advanced/
