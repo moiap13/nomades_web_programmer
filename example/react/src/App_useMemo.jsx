@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Input } from './components/forms/Input'
 import { Checkbox } from './components/forms/Checkbox'
+import { useMemo } from 'react'
 
 function App() {
   const [username, setUsername] = useState('moiap13')
   const [password, setPassword] = useState('password')
-  const security = passwordSecurity(password)
+  console.log('render')
+  const today = useMemo(() => new Date(), [])
+  // const today = new Date()
+  // const security = passwordSecurity(password)
+  const security = useMemo(() => passwordSecurity(password), [password]) 
 
   return <div className="container my-3 vstack gap-2">
     <Input
@@ -22,6 +27,7 @@ function App() {
         onChange={setPassword}
       />
       <div>Password security: {security}</div>
+      <div>Today: {today.toString()}</div>
     </div>
   </div>
 }

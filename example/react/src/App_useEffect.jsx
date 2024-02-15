@@ -24,7 +24,7 @@ function App() {
     return () => {
       clearInterval(interval)
     }
-  }, [])
+  }, [duration])
 
   return <div className='vstack gap-2'>
     <Input
