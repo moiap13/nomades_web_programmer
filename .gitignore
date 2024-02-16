@@ -1,9 +1,6 @@
 # course keynotes
 *.key
 
-# course slides
-arrayFunctions.pdf
-
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
