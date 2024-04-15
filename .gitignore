@@ -1,16 +1,43 @@
 # course keynotes
 *.key
 
-# course slides
-arrayFunctions.pdf
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+cours/jupyter/4*
+
+# Examples
+example/
+example/DOM/asychrone/promises.html
+example/DOM/asynchrone/
+example/DOM/chrono/
+example/DOM/calculatrice/
+example/DOM/juste_prix/
+example/DOM/scripts/
+example/DOM/stockage/
+example/DOM/carousel/
+example/DOM/usersList/
+example/DOM/hardware.zip
+example/DOM/index.html
 
 # exercises
 student_exercises/corrections/
-student_exercises/corrections/basics/
+student_exercises/corrections/basics/affichageNombres/
+student_exercises/corrections/basics/divers/
 student_exercises/corrections/advanced/
-student_exercises/corrections/DOM/
-student_exercises/implementations/advanced/
+student_exercises/corrections/DOM/snake/
+student_exercises/corrections/DOM/*.zip
+student_exercises/corrections/react/custom_hooks/
+student_exercises/corrections/react/product_list_old/
+student_exercises/corrections/react/toDo_list_old/
+student_exercises/corrections/react/userList/
+
 student_exercises/implementations/DOM/
+student_exercises/implementations/react/
+student_exercises/implementations/advanced/
+student_exercises/implementations/DOM/chrono.zip
+student_exercises/implementations/DOM/snakeCorrected.zip
+student_exercises/implementations/DOM/toDo_list.zip
 
 # OSX file
 .DS_Store
