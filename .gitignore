@@ -7,8 +7,8 @@
 cours/jupyter/4*
 
 # Examples
-example/
-example/DOM/asychrone/promises.html
+example/DOM/
+example/DOM/hardware/
 example/DOM/asynchrone/
 example/DOM/chrono/
 example/DOM/calculatrice/
@@ -19,6 +19,19 @@ example/DOM/carousel/
 example/DOM/usersList/
 example/DOM/hardware.zip
 example/DOM/index.html
+
+example/example_anonymous_function.html
+example/example_asynchrone.html
+example/example_dom.html
+example/example_etarget.html
+example/example_funcall.html
+example/example_functionusage_concept.html
+example/example_object.html
+example/example_storage.html
+
+example/intro.js
+
+example/react*/
 
 # exercises
 student_exercises/corrections/basics/maths/

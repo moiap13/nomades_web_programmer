@@ -172,8 +172,17 @@ function minMax(tableau) {
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/floor
  */
 function mediane(tableau) {
-  // Ton implementation
-	return null;
+  if (tableau.length === 0) return null
+
+  let sorted = triCroissant(tableau)
+
+  if (sorted.length%2===0){
+    let center = sorted.length/2
+    return (sorted[center]+sorted[center-1])/2
+  }
+
+  let center = parseInt(sorted.length/2)
+  return sorted[center]
 }
 
 /**
@@ -206,8 +215,27 @@ function mode(tableau) {
  * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sqrt
  */
 function ecartType(tableau) {
-  // Ton implementation
-	return null;
+  // const xBarre = moyenne(tableau)
+  // let totalDistances = 0
+
+  // for(let i=0; i<tableau.length; i++){
+  //   const xi = tableau[i]
+  //   totalDistances += Math.pow(xi - xBarre, 2)
+  // }
+
+  // return Math.sqrt(totalDistances / tableau.length)
+
+  // const xBarre = moyenne(tableau)
+  // let totalDistances = 0
+
+  // for(const xi of tableau){
+  //   totalDistances += Math.pow(xi - xBarre, 2)
+  // }
+
+  // return Math.sqrt(totalDistances / tableau.length)
+
+  const xBarre = moyenne(tableau)
+  return Math.sqrt(tableau.reduce((pv, cv) => pv + Math.pow(cv - xBarre, 2), 0)/tableau.length)
 }
 
 /**
