@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      .clicked {
+        background-color: lime;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divExample">
+      <h1>Hello World</h1>
+      <p id="result"></p>
+      <p id="result1"></p>
+      <p id="result2"></p>
+      <p id="result3"></p>
+    </div>
+  
+    <script>
+      const pResult = document.querySelector("p")
+      pResult.style.border = "1px solid black"
+      console.log(pResult)
+
+      pResult.innerText = "Bonjour"
+
+      const div = document.querySelector("#divExample")
+
+      function divClick() {
+          /*if(div.classList.contains("clicked")){
+            div.classList.remove("clicked")
+          } else {
+            div.classList.add("clicked")
+          }*/
+
+          div.classList.toggle("clicked")
+      }
+
+      div.addEventListener("click", divClick)
+
+      /*for(const p of pResult){
+        p.innerText = "Bonjour"
+      }
+
+      /*
+      function add(a,b){
+        return a+b
+      }
+
+      console.log([1,2,3,4,5])
+      */
+
+
+    </script>
+  </body>
+</html>
