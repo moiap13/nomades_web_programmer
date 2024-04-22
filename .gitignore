@@ -23,7 +23,6 @@ example/DOM/index.html
 example/example_anonymous_function.html
 example/example_asynchrone.html
 example/example_etarget.html
-example/example_funcall.html
 example/example_functionusage_concept.html
 example/example_object.html
 example/example_storage.html
@@ -51,7 +50,6 @@ student_exercises/corrections/react/product_list_old/
 student_exercises/corrections/react/toDo_list_old/
 student_exercises/corrections/react/userList/
 
-student_exercises/implementations/DOM/calculatrice/
 student_exercises/implementations/DOM/carousel/
 student_exercises/implementations/DOM/chrono/
 student_exercises/implementations/DOM/juste_prix/
