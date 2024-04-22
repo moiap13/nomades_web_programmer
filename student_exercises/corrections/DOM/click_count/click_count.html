@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+    <p id="count"></p>
+    <button id="click_counter">Click</button>
+    <button id="click_reset">Reset</button>
+  </div>
+  <script>
+    // Create some variables to store HTML Elements
+    const counterButton = document.querySelector("#click_counter")
+    const resetButton = document.querySelector("#click_reset")
+    const pResult = document.querySelector("#count")
+    
+    // counter will store the current value of the count
+    let counter = 0
+
+    // initialize default values for DOM
+    pResult.innerText = counter // put the value of counter inside the <p> tag
+    resetButton.disabled = true // disabled the reset button at begining
+    
+    // Add some event listener on the differents button
+    counterButton.addEventListener("click", () => { // counter button
+      counter++                     // increment counter by 1
+      pResult.innerText = counter   // update counter value inside the <p> tag
+      resetButton.disabled = false  // enable the reset button, when incrementing we force the reset button to be enabled
+    })
+    resetButton.addEventListener("click", () => { // reset button
+      counter = 0                 // reset the value of counter to 0
+      pResult.innerText = counter // update counter value inside <p> tag
+      resetButton.disabled = true // disabled reset button, when clicking on reset we want to disabled it
+    })
+  </script>
+</body>
+</html>

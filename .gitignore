@@ -37,14 +37,13 @@ student_exercises/corrections/basics/maths/
 
 student_exercises/corrections/advanced/
 
-student_exercises/corrections/DOM/
 student_exercises/corrections/DOM/calculatrice/
 student_exercises/corrections/DOM/carousel/
 student_exercises/corrections/DOM/chrono/
 student_exercises/corrections/DOM/juste_prix/
 student_exercises/corrections/DOM/snake/
 student_exercises/corrections/DOM/toDo_list/
-student_exercises/corrections/DOM/userList/
+student_exercises/corrections/DOM/usersList/
 student_exercises/corrections/DOM/*.zip
 
 student_exercises/corrections/react/custom_hooks/
