@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn0">click me 0</button>
+  <button id="btn1">click me 1</button>
+  <button id="btn2">click me 2</button>
+  <button id="btn3">click me 3</button>
+  <button id="btn4">click me 4</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click hello to me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 5</button>
+  <button id="btn5">click me 50</button>
+  
+  <script>
+    function btnClick(e) {
+      const target = e.target
+      const split = target.textContent.split(" ")
+      const btnNumber = split[split.length-1]
+      alert(`button ${btnNumber}`)
+    }
+
+    const btnList = document.querySelectorAll("button")
+    console.log(btnList)
+
+    btnList.forEach((currentHtmlElement) => {
+      currentHtmlElement.addEventListener("click", btnClick)
+    })
+  </script>
+</body>
+</html>

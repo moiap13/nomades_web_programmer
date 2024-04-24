@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const timerId = setTimeout(() => {
+      console.log("coucou")
+    }, 1000)
+
+    console.log("Antonio")
+    clearTimeout(timerId)
+    
+    let counter = 0
+    const interval0Id = setInterval(() => {
+      counter++
+      console.log(counter)
+    }, 1000)
+
+    const interval1Id = setInterval(() => {
+      counter++
+      console.log(counter)
+      if (counter > 10)
+        clearInterval(interval1Id)
+    }, 500)
+
+    console.log(interval0Id, interval1Id)
+  </script>
+</body>
+</html>
