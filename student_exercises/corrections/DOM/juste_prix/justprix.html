@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    fieldset {
+      max-width: 400px;;
+    }
+  </style>
+  <fieldset>
+    <legend>
+      <h1>Le Just Prix</h1>
+    </legend>
+    <p>Quel est le juste prix?</p>
+    <input type="number" name="prix" id="prix" title="prix">
+    <button onclick="checkPrix()">proposer</button>
+    <ul id="messages"></ul>
+  </fieldset>
+
+  <script>
+    const PRIX = Math.floor(Math.random() * 100) + 1;
+    console.log('Juste Prix: ', PRIX);
+    let counter = 0
+    const btn = document.querySelector("button")
+
+    const checkPrix = () => {
+      // TODO: récupérer la valeur du champ de saisie (prix de l'utilisateur) /!\ hint: parseInt, int i = Number(val)
+      const userPrice = Number(document.querySelector("#prix").value)
+      // TODO: comparer avec le juste prix (PRIX)
+      // TODO: si le prix est identique, afficher "Bravo, vous avez gagné"
+      // TODO: sinon, regarde si le prix est plus grand ou pluis petit pour afficher un li dans le ul avec la valeur "C'est plus" ou "C'est moins"
+      const message = (userPrice === PRIX ? "Bravo, vous avez gagné" 
+                        : (userPrice < PRIX ? "C'est plus" : "C'est moins"))
+
+      /*if(userPrice === PRIX) {
+        message = "Bravo, vous avez gagné"
+      } else if(userPrice < PRIX){
+        message = "C'est plus"
+      } else {
+        message = "C'est moins"
+      }*/
+
+      // TODO: afficher le message dans la page.
+      const ulMessages = document.querySelector("#messages")
+      const liMessage = document.createElement("li")
+      liMessage.textContent = message
+      ulMessages.appendChild(liMessage)
+
+      //document.querySelector("#messages").innerHTML += `<li> ${message} </li>`
+    }
+  </script>
+</body>
+</html>

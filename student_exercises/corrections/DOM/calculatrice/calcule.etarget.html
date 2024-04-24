@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    fieldset {
+      max-width: 400px;;
+    }
+  </style>
+  <fieldset>
+    <legend>
+      <h1>Calculatrice</h1>
+    </legend>
+    <input type="number" name="champOne" id="champOne" placeholder="" title="champOne" value="">
+    <input type="number" name="champTwo" id="champTwo" placeholder="" title="champTwo">
+    <br/>
+    <button id="sum" class="operation-button">+</button>
+    <button id="sub" class="operation-button">-</button>
+    <button id="mul" class="operation-button">*</button>
+    <button id="div" class="operation-button">/</button>
+    <button id="reset" onclick="reset()" disabled>reset</button>
+  
+    <p>Resultat: <span id="resultat"></span></p>
+  </fieldset>
+  <script>
+    /**
+      * Function that returns the numbers from the input fields 
+      * @returns {number[]} an array containing the numbers from the input fields
+      */
+    function getNumbers() {
+      const champ1 = Number(document.querySelector("#champOne").value) // Here the Number function transforms the string into a number, the strings come from the value field of the input type number
+      const champ2 = Number(document.querySelector("#champTwo").value)
+      return [champ1, champ2]
+    }
+
+    /**
+      * Function that displays the `result` provided by parameter in the span with id "resultat"
+      * @param {number} result the result to display
+      */
+    function displayResult(result) {
+      document.querySelector("#resultat").innerText = result
+    }
+
+    function computation(e) {
+      const numbers = getNumbers() 
+      const op = e.target.textContent
+      let res = null
+      switch(op) {
+        case "+":
+          res = numbers[0] + numbers[1]
+          break;
+        case "-":
+          res = numbers[0] - numbers[1]
+          break;
+        case "*":
+          res = numbers[0] * numbers[1]
+          break;
+        case "/":
+          if(numbers[1] === 0) {
+            alert("Division par zéro impossible")
+            return 
+          }
+          res = numbers[0] / numbers[1]
+          break;
+        
+          default:
+            alert("Opérateur non reconnu")
+            return
+          break;
+      }
+      //const res = eval(`${numbers[0]} ${op} '${numbers[1]}'`)
+      displayResult(res)
+      document.querySelector("#reset").disabled = false
+    }
+    
+    document.querySelectorAll(".operation-button").forEach((opBtn) => {
+      opBtn.addEventListener("click", computation)
+    })
+
+    /**
+      * Function that resets the result and the input fields
+      */
+    const reset = () => {
+      document.querySelector("#resultat").innerHTML = ""
+      document.querySelector("#champOne").value = ""
+      document.querySelector("#champTwo").value = ""
+      document.querySelector("#reset").disabled = true
+    }
+  </script>
+</body>
+</html>
